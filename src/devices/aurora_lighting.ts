@@ -196,6 +196,17 @@ export const definitions: DefinitionWithExtend[] = [
         },
     },
     {
+        zigbeeModel: ['Smart16ARelay51AU'],
+        model: 'Smart16ARelay51AU',
+        vendor: 'Aurora Lighting',
+        description: 'Aurora 16A Zigbee relay with power monitoring',
+        extend: [
+            m.deviceEndpoints({ endpoints: { relay: 2 } }),
+            m.electricityMeter({ endpointNames: ['relay'] }),
+            m.onOff({ powerOnBehavior: false, endpointNames: ['relay'] }),
+        ],
+    },
+    {
         zigbeeModel: ["WindowSensor51AU"],
         model: "AU-A1ZBDWS",
         vendor: "Aurora Lighting",
